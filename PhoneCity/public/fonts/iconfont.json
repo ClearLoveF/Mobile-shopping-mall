@@ -1,0 +1,79 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1642607",
+      "name": "家",
+      "font_class": "home",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "3759638",
+      "name": "礼物",
+      "font_class": "liwu",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "4925531",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "6972037",
+      "name": "订单",
+      "font_class": "dingdan",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "7515704",
+      "name": "账号管理",
+      "font_class": "zhanghaoguanli",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "12240038",
+      "name": "会员",
+      "font_class": "huiyuan",
+      "unicode": "e6c6",
+      "unicode_decimal": 59078
+    },
+    {
+      "icon_id": "14033473",
+      "name": "优惠券",
+      "font_class": "youhuiquan",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "14628123",
+      "name": "我的-联系客服",
+      "font_class": "wode-lianxikefu",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "14888078",
+      "name": "地址管理",
+      "font_class": "zu15",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "17605474",
+      "name": "优惠",
+      "font_class": "youhui",
+      "unicode": "e817",
+      "unicode_decimal": 59415
+    }
+  ]
+}
