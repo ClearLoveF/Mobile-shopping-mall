@@ -71,7 +71,6 @@
 		},
 		async mounted() {
 		  const { data } = await getUserInfo()
-			console.log(data)
 		  this.user = data
 		},
 		 methods: {

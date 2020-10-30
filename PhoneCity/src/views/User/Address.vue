@@ -40,7 +40,6 @@ export default {
   },
   async mounted() {
     const { data } = await getAddressList()
-	console.log(data)
     this.list = data.map(item => {
       return {
         id: item.addressId,

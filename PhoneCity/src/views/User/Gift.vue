@@ -3,8 +3,7 @@
 		<s-header :name="'礼物码兑换'"></s-header>
 		<div class="input">
 			<input type="text" placeholder="输入礼物码兑换并使用"> <span>兑换</span>
-		</div>
-		
+		</div>	
 		<van-steps :active="active" active-icon="success" active-color="#38f">
 		  <van-step>输入兑换码</van-step>
 		  <van-step>领取兑换码</van-step>
@@ -38,8 +37,6 @@
 			margin-top: 50px;
 			height: 50px;
 			background: #f8f8f8;
-			// padding: 5px 10px;
-			// display: flex;
 			input {
 				width: 80%;
 				height: 30px;

@@ -21,9 +21,9 @@
 		  		  <div>
 		  			  <div class="historylist" 
 					  v-for="(item,index) in searchList" 
-					  :key="index" >
-						<div class="history-left" @click="goSearchDetail(item)">{{item}}</div> 
-						<van-icon class="clean" name="close" @click="emptyindex(index)"/></div>		  
+					  :key="index"  @click="goSearchDetail(item)">
+						{{item}}
+					  </div>		  
 		  		  </div>
 	  </van-popup>	 
       <van-tabs type="card" color="#FF6B01" @click="changeTab" >
@@ -97,7 +97,6 @@ export default {
   },
   created(){
 	  this.searchList = JSON.parse(localStorage.getItem('keyword')) || []; //先读取local里存储的历史记录 
-	   // this.emptyindex()
   },
   methods: {
 	showPopup() {
@@ -109,16 +108,10 @@ export default {
 			 this.$toast.success('没有可删除的历史记录'); 
 		 }else{
 			this.$toast.success('清空历史搜索成功');
-			 // localStorage.removeItem('keyword');
 			 localStorage.setItem('keyword', JSON.stringify(this.keyword))
 			 this.searchList = []; 
 			 this.showFlag = false
 		 }	 
-	 },
-	 // 删除某条历史记录
-	 emptyindex(index){
-		this.searchList.splice(index, 1);
-		// localStorage.setItem('keyword', JSON.stringify(this.keyword).index)
 	 },
 	  goSearchDetail(key,type){		 
 	      this.keyword = key
@@ -127,15 +120,12 @@ export default {
      async init() {
       const { categoryId, from } = this.$route.query
       if (!categoryId && !this.keyword) {
-        // Toast.fail('请输入关键词')
         this.finished = true
         this.loading = false;
         return
       }
       const { data, data: { list } } = await search({ pageNumber: this.page, goodsCategoryId: categoryId,
 			keyword: this.keyword, orderBy: this.orderBy })
-			console.log(data)
-			console.log(list)
       this.productList = this.productList.concat(list)
 	  console.log(this.productList)
       this.totalPage = data.totalPage
@@ -162,17 +152,12 @@ export default {
 	    	    //历史记录最多只取十个
 	    	    this.searchList = this.searchList.slice(0,10)
 	    	    localStorage.setItem('keyword',JSON.stringify(this.searchList))
-	    	  }
-	  
+	    	  }	  
     },
 	deLete(key,type){
 		this.keyword = ""
 		this.onRefresh()
 	},
-    pageScroll() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      scrollTop > 50 ? this.seclectActive = true : this.seclectActive = false
-    },
     onLoad() {
       if (!this.refreshing && this.page < this.totalPage) {
         this.page = this.page +1
@@ -281,10 +266,8 @@ export default {
 		  background: #f9f9f9;
 		  margin-top: 10px;
 		  font-size: 14px;
-		  
-		  .history-left {
-			  float: left;
-		  }
+		  text-align: center;
+		 
 		  .clean {
 		  	  float: right;
 			  margin-right: 5px;

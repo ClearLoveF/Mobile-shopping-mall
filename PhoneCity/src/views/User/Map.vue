@@ -84,8 +84,6 @@
 					console.log(e.point.lng, e.point.lat)
 				})
 			},
-
-
 		}
 	}
 </script>
@@ -107,7 +105,7 @@
 	}
 	ul {
 		margin: 445px 0 0 0;
-		height: 220px;
+		height: 260px;
 		overflow-y:scroll ;
 		li{
 			height: 55px;

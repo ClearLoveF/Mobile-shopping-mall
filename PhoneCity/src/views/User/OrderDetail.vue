@@ -62,9 +62,6 @@ export default {
     this.init()
   },
   methods: {
-	// goToAddress(){
-	// 	this.$router.push({path:'address'})
-	// },
     async init() {
       Toast.loading({
         message: '加载中...',
@@ -72,19 +69,12 @@ export default {
       });
       const { id } = this.$route.query
       const { data } = await getOrderDetail(id)
-	  console.log(data)
       this.detail = data
       Toast.clear()
     },
 	goToDetail(item) {
 	  this.$router.push({ path: `product/${item.goodsId}` })
 	},
-    cancelOrder(id) {
-      Dialog.confirm({
-        title: '确认取消订单？',
-      }).then(() => {
-      })
-    },
     close() {
       Dialog.close()
     }

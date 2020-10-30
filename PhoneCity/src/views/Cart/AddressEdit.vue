@@ -109,7 +109,6 @@ export default {
       setTimeout(() => {
         this.$router.push({ path: `address?from=${this.from}` })
       }, 1000)
-
     },
     async onDelete() {
       const { data } = await DeleteAddress(this.addressId)

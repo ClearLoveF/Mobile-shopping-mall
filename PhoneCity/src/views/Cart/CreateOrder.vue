@@ -47,28 +47,28 @@
 	  	  />
 	  	</van-popup>
 	  </div>
-    </div>
-	
-	
-	
+    </div>	
     <div class="pay-wrap">
       <div class="price">
         <span>商品金额</span>
         <span>¥{{ total }}</span>
       </div>
-      <van-button @click="createOrder" class="pay-btn" color="#1baeae" type="primary" block>生成订单</van-button>
+      <van-button @click="createOrder" class="pay-btn" color="#1baeae" type="primary" block>立即订单</van-button>
     </div>
     <van-popup
       closeable
       :close-on-click-overlay="false"
       v-model="showPay"
       position="bottom"
-      :style="{ height: '30%' }"
+      :style="{ height: '55%' }"
       @close="close"
     >
       <div :style="{ width: '90%', margin: '0 auto', padding: '50px 0' }">
         <van-button :style="{ marginBottom: '10px' }" color="#1989fa" block @click="payOrder(1)">支付宝支付</van-button>
-        <van-button color="#4fc08d" block @click="payOrder(2)">微信支付</van-button>
+        <van-button :style="{ marginBottom: '10px' }" color="#4fc08d" block @click="payOrder(2)">微信支付</van-button>
+		<van-button :style="{ marginBottom: '10px' }" color="#ffff00" block @click="payOrder(3)">银行卡支付</van-button>
+		<van-button :style="{ marginBottom: '10px' }" color="#6769c0" block @click="payOrder(4)">银联</van-button>
+		<van-button :style="{ marginBottom: '10px' }" color="#1989fa" block @click="payOrder(5)">花呗支付</van-button>
       </div>
     </van-popup>
   </div>
@@ -203,8 +203,7 @@ export default {
         right: 0;
         bottom: 0;
         left: 0;
-        height: 2px;
-        
+        height: 2px;  
         background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
         background-size: 80px;
         content: '';

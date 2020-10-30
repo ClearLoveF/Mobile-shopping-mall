@@ -126,8 +126,7 @@ export default {
 	},
 	goToxiaomi(item) {
 	  this.$router.push({ path: `product/10797` })
-	},
-	
+	},	
     async onChange(value, detail) {
       if (this.list.filter(item => item.cartItemId == detail.name)[0].goodsCount == value) return
       Toast.loading({ message: '修改中...', forbidClick: true });
@@ -162,7 +161,6 @@ export default {
   }
 }
 </script>
-
 <style lang="less">
   @import '../../common/style/mixin';
   .cart-box {
@@ -185,7 +183,6 @@ export default {
     }
     .cart-body {
       margin: 45px 0 100px 0;
-      // padding-left: 0;
 	  background: #f2f2f2;
       .good-item {
         display: flex;
@@ -238,10 +235,7 @@ export default {
 		  font-size: 20px;
 	  }
 	  .guess-like {
-		  // width: 100%;
 		  .wh(100%,30%);
-		  // display: flex;
-		  // border: 1px solid red;
 		  overflow-x:scroll;
 		  
 		  ul {
@@ -254,7 +248,6 @@ export default {
 			  flex: 1;
 			  width: 20%;
 			  height: 20%;
-			  // display: flex;
 		  }
 	  }
       .title {

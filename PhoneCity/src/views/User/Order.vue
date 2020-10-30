@@ -60,13 +60,9 @@ export default {
   components: {
     sHeader
   },
-  async mounted() {
-    // this.loadData()
-  },
   methods: {
     async loadData() {
       const { data, data: { list } } = await getOrderList({ pageNumber: this.page, status: this.status })
-	  console.log(data)
       this.list = this.list.concat(list)
       this.totalPage = data.totalPage
       this.loading = false;

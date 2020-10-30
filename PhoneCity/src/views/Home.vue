@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <header class="home-header wrap" :class="{'active' : headerScroll}">
@@ -102,7 +101,6 @@ export default {
       forbidClick: true
     });
     const { data } = await getHome()
-		console.log(data)
     this.newGoodses = data.newGoodses
     this.hots = data.hotGoodses
     this.recommends = data.recommendGoodses
@@ -127,8 +125,6 @@ export default {
       left: 0;
       top: 0;
       .wh(100%, 50px);
-	  // width: 100%;
-	  // height: 50px;
       .fj();
       line-height: 50px;
       padding: 0 10px;
@@ -136,14 +132,8 @@ export default {
       font-size: 15px;
       color: #fff;
       z-index: 10000;
-      .nbmenu2 {
-        color: @primary;
-      }
       &.active {
         background: @primary;
-        .nbmenu2 {
-          color: #fff;
-        }
         .login {
           color: #fff;
         }

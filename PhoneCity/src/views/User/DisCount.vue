@@ -53,8 +53,7 @@
 							<p>华为mate 40 12GB+128GB 600元优惠券</p>
 							<p class="cont">仅华为商城/华为授权店/华为直供专营店/华为线下旗舰店</p>
 						</span>
-					</li>
-				  	
+					</li>			  	
 				  </ul>
 			  </van-tab>
 			</van-tabs>

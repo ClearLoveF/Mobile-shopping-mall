@@ -1,205 +1,248 @@
 <template>
   <div class="categray">
-    <div>
-      <header class="category-header wrap">
-        <i class="iconfont icon-fanhui3" @click="goHome"></i>
-        <div class="header-search">
-		  <van-icon class="nbSearch" name="search" />
-          <router-link tag="span" class="search-title" to="./product-list?from=category">促销活动,降价大甩卖</router-link>
-        </div>
-		<img src="../assets/mi-logo.png" alt="">
-      </header>
       <nav-bar></nav-bar>
-      <div class="search-wrap" ref="searchWrap">
-        <list-scroll :scroll-data="categoryData" class="nav-side-wrapper">
-          <ul class="nav-side">
-            <li
-              v-for="item in categoryData"
-              :key="item.categoryId"
-              v-text="item.categoryName"
-              :class="{'active' : currentIndex == item.categoryId}"
-              @click="selectMenu(item.categoryId)"
-            ></li>
-			<li>外出 游玩 风景</li>
-			<li>亲子 情侣 朋友</li>
-			<li>相机 记录 写真</li>
-          </ul>
-        </list-scroll>
-        <div class="search-content">
-          <list-scroll :scroll-data="categoryData" >
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <template v-for="(category, index) in categoryData">
-                  <div class="swiper-slide" v-if="currentIndex == category.categoryId" :key="index">
-                    <div class="category-list" v-for="(products, index) in category.secondLevelCategoryVOS" :key="index">
-                      <p class="catogory-title">{{products.categoryName}}</p>
-                      <div class="product-item" v-for="(product, index) in products.thirdLevelCategoryVOS.slice(0 , 12)" :key="index" @click="selectProduct(product)">
-						  <img src="../assets/tv.jpg" class="product-img" alt="">
-                        <p v-text="product.categoryName" class="product-title"></p>
-                      </div>
-                    </div>
-                  </div>
-                </template>
-              </div>
-            </div>
-          </list-scroll>
-        </div>
-      </div>
-    </div>
+	  <van-tabs v-model="active" type="card" color="#FF6B01" animated>
+	    <van-tab title="iphone专区">
+			<div class="iphone">
+				<div class="head-img">
+					<ul>
+						<img src="../assets/iPhone/1.png" alt="">
+						<img src="../assets/iPhone/2.png" alt="">
+					</ul>
+				</div>
+				<div class="conent">
+					<img src="../assets/iPhone/7.png" alt="">
+				</div>
+				<div class="text">
+					<img src="../assets/iPhone/3.png" alt="">
+					<p class="t1">好日子要记好</p>
+					<p class="t2">iPhone 12 Pro Max</p>
+					<p class="t3">11 月 6 日晚 9 点</p>
+					<p class="t4">开始预购</p>
+					<p class="t5">11 月 13 日发售</p>
+				</div>
+				<div class="con-img">
+					<img src="../assets/iPhone/4.png" alt="">
+				</div>
+				<div class="con-img">
+					<img src="../assets/iPhone/5.png" alt="">
+				</div>
+				<div class="con-img">
+					<img src="../assets/iPhone/6.png" alt="">
+				</div>
+			</div>
+		</van-tab>
+	    <van-tab title="华为专区">
+			<div class="huawei">
+				<img src="../assets/huawei/1.png" alt="">
+				<img src="../assets/huawei/2.png" alt="">
+				<img src="../assets/huawei/3.png" alt="">
+				<img src="../assets/huawei/4.png" alt="">
+				<img src="../assets/huawei/5.png" alt="">
+				<img src="../assets/huawei/6.png" alt="">
+				<img src="../assets/huawei/7.png" alt="">
+				<span></span>
+			</div>
+		</van-tab>
+	    <van-tab title="小米专区">
+			<div class="mi">
+				<div class="cont1-img">
+					<img src="../assets/mi/1.webp" alt="">
+					<img src="../assets/mi/2.webp" alt="">
+				</div>
+				<div class="swipe">
+					<van-swipe  :width="200" @change="onChange">
+					  <van-swipe-item>
+						  <img src="../assets/mi/1.png" alt="">
+					  </van-swipe-item>
+					  <van-swipe-item>
+						  <img src="../assets/mi/2.png" alt="">
+					  </van-swipe-item>
+					  <van-swipe-item>
+						  <img src="../assets/mi/3.png" alt="">
+					  </van-swipe-item>
+					  <van-swipe-item>
+						  <img src="../assets/mi/4.png" alt="">
+					  </van-swipe-item>
+					  <van-swipe-item>
+						  <img src="../assets/mi/5.png" alt="">
+					  </van-swipe-item>
+					</van-swipe>
+				</div>
+				<div class="cont2-img">
+					<img src="../assets/mi/6.png" alt="">
+					<img src="../assets/mi/7.png" alt="">
+				</div>
+				<div class="video">
+					<video poster="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/a62dd460899d6a3d37f1ff9cbb780d78.jpg?f=webp&amp;w=1280&amp;h=720&amp;bg=0" src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/e77d427d894cff2ca101f51e3a4c0301.mp4" data-log_code="hd#page=promotion&amp;bid=3640424.0" playsinline="playsinline" webkit-playsinline="webkit-playsinline" x-webkit-airplay="x-webkit-airplay" preload="none" controls="controls" data-settrack="true" onclick="_msq.push(['trackEvent','hd#page=promotion&amp;bid=3640424.0','','aa6b36fbc8a2bd55-b2aef6336abcc156','&quot;&quot;']);" stat_exposure="true"></video>
+				</div>
+				<div class="cont3-img">
+					<img src="../assets/mi/8.png" alt="">					
+				</div>
+				<div class="video">
+					<video poster="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/7460eb0042ebcdbcd7626a358f8942b2.jpg?f=webp&amp;w=1280&amp;h=720&amp;bg=FFFFFF" src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/33447323e14427cf1f65a965237748c8.mp4" data-log_code="hd#page=promotion&amp;bid=3626682.0" playsinline="playsinline" webkit-playsinline="webkit-playsinline" x-webkit-airplay="x-webkit-airplay" preload="none" controls="controls" data-settrack="true" onclick="_msq.push(['trackEvent','hd#page=promotion&amp;bid=3626682.0','','aa6b36fbc8a2bd55-911bd640aa4a3492','&quot;&quot;']);" stat_exposure="true"></video>
+				</div>
+				<span></span>
+			</div>
+		</van-tab>
+	  </van-tabs>
+    
   </div>
 </template>
 
 <script>
 import navBar from '@/components/NavBar'
-import listScroll from '@/components/ListScroll'
-import { getCategory } from "../service/good";
 export default {
   components: {
     navBar,
-    listScroll
   },
   data() {
     return {
-      categoryData: [],
-      currentIndex: 15
+	   active: 0,
+	   current:0
     }
-  },
-  async mounted() {
-    this.setWrapHeight()
-    const { data } = await getCategory()
-	console.log(data)
-    this.categoryData = data
   },
   methods: {
     goHome () {
       this.$router.push({ path: 'home' })
     },
-    setWrapHeight() {
-      // 设置视口高度
-      let $screenHeight = document.documentElement.clientHeight
-      this.$refs.searchWrap.style.height = $screenHeight - 100 + 'px'
-    },
-    selectMenu(index) {
-      this.currentIndex = index
-    },
-    selectProduct(item){
-      this.$router.push({ path: `product-list?categoryId=${item.categoryId}` })
-    },
+	onChange(index) {
+	      this.current = index;
+	    },
   }
 }
 </script>
 <style lang="less" scoped>
   @import '../common/style/mixin';
   .categray {
-    .category-header {
-      background: #FF6B01;
-      position: fixed;
-      left: 0;
-      top: 0;
-      .fj();
-      .wh(100%, 50px);
-      line-height: 50px;
-      padding: 0 15px;
-      box-sizing: border-box;
-      font-size: 15px;
-      color: #656771;
-      z-index: 10000;
-      &.active {
-        background: @primary;
-      }
-      .icon-left {
-        font-size: 25px;
-        font-weight: bold;
-      }
-      .header-search {
-        display: flex;
-        width: 80%;
-        height: 20px;
-        line-height: 20px;
-        margin: 10px 0;
-        padding: 5px 0;
-        color: #232326;
-        background: #F7F7F7;
-        border-radius: 20px;
-        .nbSearch {
-          padding: 2px 10px 0 20px;
-          font-size: 17px;
-        }
-        .search-title {
-          font-size: 12px;
-          color: #666;
-        }
-      }
-      .icon-More {
-        font-size: 20px;
-      }
-    }
-  }
-  .search-wrap {
-    .fj();
-    width: 100%;
-    margin-top: 50px;
-    background: #F8F8F8;
-    border-top: 1px solid #999;
-    .nav-side-wrapper {
-      width: 28%;
-      height: 100%;
-      overflow: hidden;
-      .nav-side {
-        width: 100%;
-        .boxSizing();
-        background: #F8F8F8;
-        li {
-          width: 100%;
-          height: 56px;
-          text-align: center;
-          line-height: 56px;
-          font-size: 14px;
-          &.active {
-            color: @primary;
-            background: #FFFFFF;
-          }
-        }
-      }
-    }
-    .search-content {
-      width: 72%;
-      height: 100%;
-      padding: 0 10px;
-      background: #f5f5f5;
-      .boxSizing();
-      .swiper-container {
-        width: 100%;
-        .swiper-slide {
-          width: 100%;
-          .category-main-img {
-            width: 100%;
-          }
-          .category-list {
-            display: flex;
-            flex-wrap: wrap;
-            flex-shrink: 0;
-            width: 100%;
-            .catogory-title {
-              width: 100%;
-              font-size: 17px;
-              font-weight: 500;
-              padding: 20px 0;
-			  text-align: center;
-			  border-bottom: 1px solid red;
-            }
-            .product-item {
-              width: 33.3333%;
-              margin-bottom: 10px;
-              text-align: center;
-              font-size: 15px;
-              .product-img {
-                .wh(60px, 60px);
-              }
-            }
-          }
-        }
-      }
-    }
+    background: #ff5500;
+	.van-tabs {
+		background: #ff5500;
+		margin-top: 5px;
+		.iphone {
+			width: 100%;		
+			.head-img {
+				width: 100%;
+				height: 110px;
+				overflow-x: scroll;
+				&::-webkit-scrollbar{
+					display: none;
+				}
+				ul {
+					width: 200%;
+					margin: 0;
+					height: 110px;
+					img {
+						width: 50%;
+						height: 110px;
+					}
+				}
+			}
+			.conent {
+				background: #000;
+				img {
+					display: block;
+					width: 90%;
+					margin-left:7%;
+				}
+			}
+			.text {
+				width: 100%;
+				height: 600px;
+				background: #000;
+				img {
+					display: block;
+					width: 50%;
+					margin: 0 auto;
+				}
+				.t1 {
+					text-align: center;
+					color: #fff;
+					font-size: 22px;
+					font-weight: 600;
+				}
+				.t2 {
+					text-align: center;
+					color: #fff;
+					font-size: 18px;
+				}
+				.t3 {
+					text-align: center;
+					color: #c8c8c8;
+					font-size: 18px;
+				}
+				.t4 {
+					text-align: center;
+					color: #c8c8c8;
+					font-size: 18px;
+					margin-top: -20px;
+				}
+				.t5 {
+					text-align: center;
+					color: #c8c8c8;
+					font-size: 18px;
+				}
+			}
+			.con-img {
+				width: 100%;
+				img {
+					width: 100%;
+					margin-top: -5px;
+				}
+			}
+		}
+		.huawei {
+			width: 100%;
+			img {
+				width: 100%;
+				margin-top: -3px;
+			}
+			span {
+				display: block;
+				width: 100%;
+				height: 45px;
+			}
+		}
+		.mi {
+			width: 100%;
+			.cont1-img {
+				width: 100%;
+				img {
+					width: 100%;
+					margin-top: -3px;
+				}
+			}
+			.swipe {
+				width: 100%;
+				margin-top: -3px;
+				background: #74BB6F;
+			}
+			.cont2-img {
+				width: 100%;
+				background: #7093BB;
+				img {
+					width: 100%;
+				}
+			}
+			.video {
+				width: 100%;
+				video {
+					width: 100%;
+				}
+			}
+			.cont3-img {
+				width: 100%;
+				background: #7093BB;
+				img {
+					width: 100%;
+				}
+			}
+			span {
+				display: block;
+				width: 100%;
+				height: 45px;
+			}
+		}
+	}
   }
 </style>

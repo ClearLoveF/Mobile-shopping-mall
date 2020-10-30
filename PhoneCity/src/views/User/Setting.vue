@@ -3,7 +3,6 @@
     <s-header :name="'账号管理'"></s-header>
     <div class="input-item">
       <van-field v-model="nickName" label="昵称" />
-      <!-- <van-field v-model="introduceSign" label="个性签名" /> -->
       <van-field v-model="password" type='password' label="修改密码" />
     </div>
     <van-button class="save-btn" color="#FF6B01" type="primary" @click="save" block>保存</van-button>

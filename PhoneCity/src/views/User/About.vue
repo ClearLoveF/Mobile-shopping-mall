@@ -36,8 +36,7 @@ export default {
 		
 		li {
 			.wh(100%,40px);
-			// border: 1px solid red;
-			
+
 			a {
 				display: inline-block;
 				.wh(100%,40px);

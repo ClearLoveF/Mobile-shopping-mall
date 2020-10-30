@@ -72,7 +72,6 @@ import { getUserInfo } from '../service/user'
 export default {
   components: {
     navBar,
-    // sHeader
   },
   data() {
     return {
@@ -153,6 +152,7 @@ export default {
 			  width: 100%;
 			  height: 30%;
 			  text-align: right;
+			  color: #fff;
 			  p {
 				  margin-top: 0;
 				  width: 100%;
@@ -181,7 +181,6 @@ export default {
           font-size: 14px;
           color:#fff;
           span {
-            // color: #fff;
             font-size: 14px;
             padding: 2px 0;
           }
@@ -204,8 +203,6 @@ export default {
 	  background: #f9f9f9;
       padding: 0 20px;
       margin-top: 20px;
-	  // max-height: 450px;
-	  // overflow-y: scroll;
       li {
         height: 40px;
         line-height: 40px;

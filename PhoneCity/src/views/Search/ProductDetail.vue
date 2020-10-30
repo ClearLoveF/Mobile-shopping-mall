@@ -17,7 +17,6 @@
         <div class="product-price">
           <span>¥{{ detail.sellingPrice }}</span>
 		  <van-rate v-model="value" allow-half void-icon="star" void-color="#eee" />
-          <!-- <span>库存203</span> -->
         </div>
       </div>
       <div class="product-intro">
@@ -27,8 +26,7 @@
 			<van-cell is-link @click="showPopup" style="background-color: skyblue;">参数</van-cell>
 			<van-popup v-model="show" style="text-align: left;background-color: darkgray;width: 100%;">{{ detail.goodsName }}<br>{{detail.goodsIntro}} </van-popup>
 		  </li>
-          <li>服务</li>
-          
+          <li>服务</li>     
         </ul>
         <div class="product-content" v-html="detail.goodsDetailContent"></div>
       </div>
